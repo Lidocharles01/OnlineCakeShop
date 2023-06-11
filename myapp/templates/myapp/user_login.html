@@ -1,0 +1,86 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %}User Login{% endblock %}
+{% block background %}background="{% static 'myapp/images/bgcake6s.png'%}" {% endblock %}
+{% block body %}
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<center>
+    <div class="container bg-secondary mt-5" id="form-div" style="width:50%;height:400px;background-image:url({% static './myapp/images/bgcake6.jpg' %})">
+     <h2><font color="#366092">User Login</font></h2>
+        <!--<img src="{% static 'myapp/images/person.png'%}" width="150" height="150">-->
+    <div class="container mt-5" >
+        <form role="form" name="form1" action="{% url 'user_login' %}"  method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="uname">User Name</label>
+                <br>
+                <input type="email" onblur="ValidateEmail(document.form1.uname)"  name="uname" id="uname">
+            </div>
+             <div class="form-group">
+                 <label for="uname">Password</label>
+                 <br>
+                 <input class="form" type="password" id="passwd" name="passwd">
+             </div>
+            <button type="submit" class="btn btn-info" id="bt" name="bt">Login</button>
+            <button type="reset" class="btn btn-info" id="rt" name="rt">Reset</button>
+
+            <br/>
+        <a href="{% url 'user_details_add' %}">New User</a></h1>
+        </form>
+    {{msg}}
+    </div>
+        </div>
+</center>
+
+<style>
+body {
+  background: url("{% static 'myapp/images/ck.jpg'%}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+ #form-div{
+width:500px;
+height:400px;
+background:linear-gradient(white,grey);
+border-radius:8px;
+margin-top:30px;
+padding: 50px 0 0 0;
+box-shadow: 7px 3px 5px -2px #1a0000;
+
+}
+input{
+border: none;
+border-radius: 6px;
+width: 286px;
+margin: 20px 0 0 0;
+height: 35px;
+outline:none;
+font-size:15px;
+font-family:monospace;
+
+}
+</style>
+
+<script>
+    function ValidateEmail(mail)
+{
+    //  alert("You have entered an invalid email address!")
+ if (/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/.test(mail.value))
+  {
+    return (true)
+  }
+    //alert("You have entered an invalid email address!")
+    return (false)
+}
+</script>
+{% endblock %}
+

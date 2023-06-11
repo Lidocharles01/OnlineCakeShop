@@ -1,0 +1,34 @@
+{% extends 'myapp/user_base.html' %}
+{% load static %}
+{% block title %}Hello User{% endblock %}
+{% block body %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
+
+
+</center>
+<center>
+        <font color="">Welcome {{ uname}}</font></h2>
+{{msg}}
+
+</center>
+
+<div class="carousel-item active">
+      <img src="{% static './myapp/images/ck4.jpg' %}" class="d-block w-100" width="1600" height="900" alt="">
+     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3>Welcome to Online Cake shop </h3>
+            <br>
+            <p class="fst-italic">
+              Here.......
+              Good and Delicious cakes are available for your
+            </p>
+          </div>
+        </div>
+
+      </div>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Online Cake shop - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static './myapp/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static './myapp/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static './myapp/assets/css/style.css' %}" rel="stylesheet">
+</head>
+  <body {% block background %}{% endblock %}>
+    <header id="header" class="fixed-top d-flex align-items-cente">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a href="{% url 'user_home'%}"><serif> User Home </serif></a></h1>
+      <li><a href="{% url 'user_cake_master_search'%}">Search</a></li>
+      <li><a href="{% url 'user_cake_master_view'%}">All Cakes</a></li>
+      <li><a href="{% url 'user_cake_payment_view'%}">Transactions</a></li>
+      <li><a href="{% url 'user_cake_orders_view'%}"> <b> My Orders </b> </a></li>
+      <li><a href="{% url 'user_changepassword'%}"> <b> Change Password </b> </a></li>
+      <li><a href="{% url 'user_logout'%}"><b>Logout </b></a></li>
+      </ul>
+
+    </div>
+  </header>
+
+   {% block body %}{% endblock %}
+  <!-- Template Main JS File -->
+  <script src="{% static './myapp/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

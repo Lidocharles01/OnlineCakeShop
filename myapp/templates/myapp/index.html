@@ -1,0 +1,66 @@
+<!DOCTYPE html>{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Online Cake Shop - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static './myapp/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static './myapp/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- Template Main CSS File -->
+  <link href="{% static './myapp/assets/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div>
+    <img src="{% static './myapp/images/cake2.jpg' %}" class="d-block w-300" width="1550" height="1400" alt="">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-cente">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a href="{% url 'index'%}">Online Cake shop</a></h1>
+          <li><a href="{% url 'index'%}">Home</a></li>
+          <li><a href="{% url 'admin_login'%}"> <b> Admin Login </b> </a></li>
+          <li><a href="{% url 'user_login'%}"><b> User Login</b></a></li>
+      <a href="{% url 'user_login'%}" class="book-a-table-btn scrollto d-none d-lg-flex">Book a Cake</a>
+    </div>
+
+  </header><!-- End Header -->
+        <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3>Welcome to Online Cake shop </h3>
+            <br>
+            <p class="fst-italic">
+              Here.......
+              Good and Delicious cakes are available for your
+            </p>
+            <br>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> “Let’s face it, a nice creamy chocolate cake does a lot for a lot of people; it does for me.” — Audrey Hepburn.</li>
+              <br>
+              <li><i class="bi bi-check-circle"></i> “I would say some of the food I talk about that I really enjoy, like cake and bacon, I eat a lot less than I portray in my act. But that stuff that I dislike, it’s pretty sincere.” — Jim Gaffigan</li>
+              <br>
+
+          </div>
+        </div>
+
+      </div>
+  <!-- Template Main JS File -->
+  <script src="{% static './myapp/assets/js/main.js' %}"></script>
+
+</body>
+
+</html

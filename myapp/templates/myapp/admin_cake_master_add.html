@@ -1,0 +1,44 @@
+{% extends 'myapp/admin_base.html' %}
+{% load static %}
+{% block title %} Cake Add{% endblock %}
+{% block body %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
+<h2><font color="#366092">Cake Add</font></h2>
+<div class="container">
+    <form name="frm" action="{% url 'admin_cake_master_add' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        <div class="form-group">
+            <label for="name">name :</label>
+            <input class="form-control" type="text" name="name" id="name" value="" required>
+        </div>
+        <div class="form-group">
+            <label for="qty">qty :</label>
+            <input class="form-control" type="text" name="qty" id="qty" value="" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description :</label>
+            <textarea class="form-control"  name="description" id="description"  required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="price"> Amt :</label>
+            <input class="form-control" type="number" name="price" id="price" value="" required step="0.00000001" min="0.00000001" required title="Enter price above 0"">
+        </div>
+        <div class="form-group">
+            <label for="document">Picture</label>
+            <input class="form-control" type="file" name="document" id="document">
+        </div>
+
+        <button type="submit" class="btn btn-info" id="bt" name="bt">Add</button>
+        <button type="reset" class="btn btn-info" id="rt" name="rt">Reset</button>
+        {{msg}}
+
+    </form>
+</div>
+</center>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'myapp/admin_base.html' %}
+{% load static %}
+{% block title %} Cake Add{% endblock %}
+{% block body %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
+<h2><font color="#366092">Cake Update</font></h2>
+<div class="container">
+    <form name="frm" action="{% url 'admin_cake_master_update' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        <div class="form-group">
+            <label for="name">name :</label>
+            <input class="form-control" type="text" name="name" id="name" value="{{up.name}}" required>
+        </div>
+        <div class="form-group">
+            <label for="qty">qty :</label>
+            <input class="form-control" type="text" name="qty" id="qty" value="{{up.qty}}" required step="0.00000001" min="0.00000001" required title="Enter price above 0">
+        </div>
+        <div class="form-group">
+            <label for="description">Description :</label>
+            <input  class="form-control" type="text"  name="description" id="description" value="{{up.description}}" required>
+        </div>
+        <div class="form-group">
+            <label for="price"> Amt :</label>
+            <input class="form-control" type="number" name="price" id="price" value="{{up.price}}" required step="0.00000001" min="0.00000001" required title="Enter price above 0">
+        </div>
+        <button type="submit" class="btn btn-info" id="bt" name="bt">Update</button>
+        <button type="reset" class="btn btn-info" id="rt" name="rt">Reset</button>
+        <input type="hidden"name="p_id"value="{{up.id}}">
+        {{msg}}
+
+    </form>
+</div>
+</center>
+{% endblock %}

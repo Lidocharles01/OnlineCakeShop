@@ -1,0 +1,79 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %}Admin Login{% endblock %}
+{% block background %}background="{% static './myapp/images/1.jpg' %}"{% endblock %}
+{% block body %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<center>
+    <div class="container bg-secondary mt-5" id="form-div" style="width:50%;height:400px;background-image:url({% static './myapp/images/bgcake6.jpg' %})">
+     <h2><font color="#366092">Admin Login</font></h2>
+        <!--<img src="{% static 'myapp/images/person.png'%}" width="150" height="150">-->
+    <div class="container mt-5" >
+        <form role="form" name="frm" action="{% url 'admin_login' %}"  method="post">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="un">User Name :</label>
+                <br>
+                <input class="form-control" type="text" name="un" id="un">
+            </div>
+             <div class="form-group">
+                 <label for="pwd">Password :</label>
+                 <br>
+                 <input class="form-control" type="password" name="pwd" id="pwd">
+             </div>
+            <button type="submit"
+        class="btn btn-info" id="bt" name="bt">Login</button>
+        <button type="reset"
+        class="btn btn-info" id="rt" name="rt">Reset</button>
+
+            <br/>
+
+        </form>
+
+    </div>
+        {% autoescape off %}{{ msg1 }}{% endautoescape %}
+        </div>
+</center>
+
+
+<style>
+body {
+  background: url("{% static 'myapp/images/ck6.jpg'%}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+ #form-div{
+width:500px;
+height:400px;
+background:linear-gradient(white,grey);
+border-radius:8px;
+margin-top:30px;
+padding: 50px 0 0 0;
+box-shadow: 7px 3px 5px -2px #1a0000;
+
+}
+input{
+border: none;
+border-radius: 6px;
+width: 286px;
+margin: 20px 0 0 0;
+height: 35px;
+outline:none;
+font-size:15px;
+font-family:monospace;
+
+}
+</style>
+
+    <script src="{% static './myapp/scripts/loginscript.js' %}"></script>
+
+{% endblock %}
